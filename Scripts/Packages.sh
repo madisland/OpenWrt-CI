@@ -83,7 +83,7 @@ UPDATE_PACKAGE "theme-shadcn" "eamonxg/luci-theme-shadcn" "main"
 #UPDATE_PACKAGE "qmodem-generic" "LianXia233/luci-app-qmodem-generic" "main"
 
 UPDATE_PACKAGE "luci-app-adguardhome" "sirpdboy/luci-app-adguardhome" "main"
-UPDATE_PACKAGE "timecontrol" "gaobin89/luci-app-timecontrol" "js"
+UPDATE_PACKAGE "timecontrol" "madisland/luci-app-timecontrol" "js"
 UPDATE_PACKAGE "luci-app-lucky" "sirpdboy/luci-app-lucky" "main"
 #更新软件包版本
 UPDATE_VERSION() {
