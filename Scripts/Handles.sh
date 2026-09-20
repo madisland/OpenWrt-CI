@@ -203,6 +203,39 @@ if [ -d "$PKG_PATH/luci-app-mini-diskmanager" ]; then
 	fi
 fi
 
+#修改timecontrol菜单位置
+if [ -d "$PKG_PATH/luci-app-timecontrol" ]; then
+	echo " "
+	if sed -i "s/control/services/g" \
+		"$PKG_PATH/luci-app-timecontrol/luci-app-timecontrol/root/usr/share/luci/menu.d/luci-app-timecontrol.json"; then
+		echo "luci-app-timecontrol has been fixed!"
+	else
+		echo "luci-app-timecontrol fix failed; continuing!"
+	fi
+fi
+
+#修改luci-app-openlist菜单位置
+if [ -d "$PKG_PATH/../feeds/luci/applications/luci-app-openlist" ]; then
+	echo " "
+	if sed -i "s/services/nas/g" \
+		"$PKG_PATH/../feeds/luci/applications/luci-app-openlist/root/usr/share/luci/menu.d/luci-app-openlist.json"; then
+		echo "luci-app-openlist has been fixed!"
+	else
+		echo "luci-app-openlist fix failed; continuing!"
+	fi
+fi
+
+#修改luci-app-ksmbd菜单位置
+if [ -d "$PKG_PATH/../feeds/luci/applications/luci-app-ksmbd" ]; then
+	echo " "
+	if sed -i "s/services/nas/g" \
+		"$PKG_PATH/../feeds/luci/applications/luci-app-ksmbd/root/usr/share/luci/menu.d/luci-app-ksmbd.json"; then
+		echo "luci-app-ksmbd has been fixed!"
+	else
+		echo "luci-app-ksmbd fix failed; continuing!"
+	fi
+fi
+
 #修复TailScale配置文件冲突
 FEEDS_PACKAGES="$PKG_PATH/../feeds/packages"
 TS_FILE="$(find "$FEEDS_PACKAGES" -maxdepth 3 -type f -wholename '*/tailscale/Makefile' -print -quit 2>/dev/null)"
