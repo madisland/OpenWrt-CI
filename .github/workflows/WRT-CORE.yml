@@ -182,10 +182,7 @@ jobs:
           fi
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
-
-          echo "增加openwrt-sonic-fullcone支持"
-          curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
-          
+       
           make defconfig -j$(nproc) && make clean -j$(nproc)
 
       - name: Download Packages
