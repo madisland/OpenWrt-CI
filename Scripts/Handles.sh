@@ -203,16 +203,6 @@ if [ -d "$PKG_PATH/luci-app-mini-diskmanager" ]; then
 	fi
 fi
 
-#修改timecontrol菜单位置
-if [ -d "$PKG_PATH/luci-app-timecontrol" ]; then
-	echo " "
-	if sed -i "s/control/services/g" \
-		"$PKG_PATH/luci-app-timecontrol/luci-app-timecontrol/root/usr/share/luci/menu.d/luci-app-timecontrol.json"; then
-		echo "luci-app-timecontrol has been fixed!"
-	else
-		echo "luci-app-timecontrol fix failed; continuing!"
-	fi
-fi
 
 #修改luci-app-openlist菜单位置
 if [ -d "$PKG_PATH/../feeds/luci/applications/luci-app-openlist" ]; then
