@@ -203,6 +203,16 @@ if [ -d "$PKG_PATH/luci-app-mini-diskmanager" ]; then
 	fi
 fi
 
+#修改luci-app-openlist2菜单位置
+if [ -d "$PKG_PATH/luci-app-openlist2" ]; then
+	echo " "
+	if sed -i "s/services/nas/g" \
+		"$PKG_PATH/luci-app-openlist2/luci-app-openlist2/root/usr/share/luci/menu.d/luci-app-openlist2.json"; then
+		echo "luci-app-openlist2 has been fixed!"
+	else
+		echo "luci-app-openlist2 fix failed; continuing!"
+	fi
+fi
 
 #修改luci-app-openlist菜单位置
 if [ -d "$PKG_PATH/../feeds/luci/applications/luci-app-openlist" ]; then
