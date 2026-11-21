@@ -44,3 +44,16 @@ FIX "mini-diskmanager" "$PACKAGE_PATH/luci-app-mini-diskmanager" sed -i "s/servi
 #修改natmapt菜单位置
 FIX "natmapt" "$PACKAGE_PATH/luci-app-natmapt" sed -i "s/network/services/g" \
 	"$PACKAGE_PATH/luci-app-natmapt/root/usr/share/luci/menu.d/luci-app-natmap.json"
+
+#修改luci-app-openlist2菜单位置
+FIX "luci-app-openlist2" "$PACKAGE_PATH/luci-app-openlist2" sed -i "s/services/nas/g" \
+	"$PACKAGE_PATH/luci-app-openlist2/luci-app-openlist2/root/usr/share/luci/menu.d/luci-app-openlist2.json"
+
+#修改luci-app-openlist菜单位置
+FIX "luci-app-openlist" "$PACKAGE_PATH/../feeds/luci/applications/luci-app-openlist" sed -i "s/services/nas/g" \
+	"$PACKAGE_PATH/../feeds/luci/applications/luci-app-openlist/root/usr/share/luci/menu.d/luci-app-openlist.json"
+
+#修改luci-app-ksmbd菜单位置
+FIX "luci-app-ksmbd" "$PACKAGE_PATH/../feeds/luci/applications/luci-app-ksmbd" sed -i "s/services/nas/g" \
+	"$PACKAGE_PATH/../feeds/luci/applications/luci-app-ksmbd/root/usr/share/luci/menu.d/luci-app-ksmbd.json"
+
